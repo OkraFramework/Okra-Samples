@@ -1,0 +1,31 @@
+﻿<UserControl
+    x:Class="OkraSettingsSample.Pages.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OkraSettingsSample.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:nav="using:Okra.Navigation"
+    mc:Ignorable="d"
+    d:DesignWidth="346"
+    RequestedTheme="Light"
+    nav:SettingsPaneInfo.Title="Settings" nav:SettingsPaneInfo.IconSource="ms-appx:///Assets/SmallLogo.png"
+    nav:SettingsPaneInfo.HeaderBackground="{ThemeResource SettingsFlyoutHeaderBackgroundThemeBrush}" nav:SettingsPaneInfo.HeaderForeground="{ThemeResource SettingsFlyoutHeaderForegroundThemeBrush}">
+
+    <!-- This StackPanel acts as a root panel for vertical layout of the content sections -->
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                Background="{ThemeResource SettingsFlyoutBackgroundThemeBrush}">
+
+        <!-- The StackPanel(s) below define individual content sections -->
+
+        <!-- Content Section 1-->
+        <StackPanel Style="{StaticResource SettingsFlyoutSectionStyle}">
+            <TextBlock TextWrapping="Wrap" Text="{StaticResource AppName}" Style="{StaticResource TitleTextBlockStyle}" Foreground="#C6000000" CharacterSpacing="20"/>
+            <TextBlock TextWrapping="Wrap" Text="By Andrew Wilkinson" Style="{StaticResource BodyTextBlockStyle}" Foreground="#C6000000" CharacterSpacing="20"/>
+            <TextBlock TextWrapping="Wrap" Text="{Binding VersionText, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}" Foreground="#C6000000" CharacterSpacing="20"/>
+        </StackPanel>
+
+        <!-- Define more Content Sections below as necessary -->
+
+    </StackPanel>
+</UserControl>
