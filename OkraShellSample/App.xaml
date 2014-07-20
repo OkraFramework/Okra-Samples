@@ -1,0 +1,16 @@
+﻿<okra:OkraApplication
+    x:Class="OkraShellSample.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:okra="using:Okra"
+    xmlns:local="using:OkraShellSample"
+    xmlns:localData="using:OkraShellSample.Data">
+
+  <Application.Resources>
+
+    <!-- Application-specific resources -->
+
+    <x:String x:Key="AppName">OkraShellSample</x:String>
+
+  </Application.Resources>
+</okra:OkraApplication>
