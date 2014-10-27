@@ -1,15 +1,16 @@
 ﻿<UserControl
-    x:Class="OkraSettingsSample.Pages.Settings"
+    x:Class="OkraSettingsSample.Settings.WideSettings"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OkraSettingsSample.Pages"
+    xmlns:local="using:OkraSettingsSample.Settings"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:nav="using:Okra.Navigation"
     mc:Ignorable="d"
-    d:DesignWidth="266"
+    d:DesignWidth="420"
     RequestedTheme="Light"
     nav:SettingsPaneInfo.Title="Settings" nav:SettingsPaneInfo.IconSource="ms-appx:///Assets/SmallLogo.png"
+    nav:SettingsPaneInfo.Width="500"
     nav:SettingsPaneInfo.HeaderBackground="{ThemeResource SettingsFlyoutHeaderBackgroundThemeBrush}" nav:SettingsPaneInfo.HeaderForeground="{ThemeResource SettingsFlyoutHeaderForegroundThemeBrush}">
 
     <!-- This StackPanel acts as a root panel for vertical layout of the content sections -->
@@ -22,15 +23,10 @@
         <StackPanel Style="{StaticResource SettingsFlyoutSectionStyle}">
             <StackPanel>
                 <TextBlock TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}" Foreground="#C6000000" CharacterSpacing="20">
-        		<Run Text="This is a sample settings pane."/>
+        		<Run Text="This is a sample wide settings pane."/>
                 <LineBreak/><LineBreak/>
-                <Run Text="The view is defined in Settings.xaml and the view-model in SettingsViewModel.cs"/>
-                <LineBreak/><LineBreak/>
-                <Run Text="The Okra App Framework has full navigation support for settings panes. For example click the following link,"/>
-                </TextBlock>
-                <HyperlinkButton Content="Navigate to child page" Margin="20,20,0,0" Command="{Binding NavigateToChildCommand, Mode=OneWay}"/>
-                <TextBlock TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}" Foreground="#C6000000" CharacterSpacing="20" Margin="0,10,0,0" >
-        		<Run Text="Since this is the root page clicking the back button will show the system settings pane."/>
+                <Run Text="The view is defined in WideSettings.xaml and the view-model in WideSettingsViewModel.cs. The width of the settings page is changed by setting the SettingsPaneInfo.Width property on the root element."/>
+                <LineBreak/><LineBreak/><Run Text="Since this is the root page clicking the back button will show the system settings pane."/>
                 <LineBreak/><LineBreak/>
                 <Run Text="Note that clicking anywhere outside of this settings pane will close it."/>
                 </TextBlock>
