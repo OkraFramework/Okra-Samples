@@ -28,7 +28,7 @@ namespace OkraShellSample.Pages
     {
         // *** Fields ***
 
-        private INavigationManager navigationManager;
+        private INavigationBase navigationManager;
         private ICommand goBackCommand;
 
         private object content;
@@ -44,11 +44,7 @@ namespace OkraShellSample.Pages
             }
             set
             {
-                if (content != value)
-                {
-                    content = value;
-                    OnPropertyChanged();
-                }
+                SetProperty(ref content, value);
             }
         }
 
@@ -58,27 +54,15 @@ namespace OkraShellSample.Pages
             {
                 return goBackCommand;
             }
-        }
-
-        // *** Imported Properties ***
-
-        [Import]
-        public INavigationManager NavigationManager
-        {
-            get
-            {
-                return navigationManager;
-            }
             set
             {
-                this.navigationManager = value;
-                this.goBackCommand = navigationManager.GetGoBackCommand();
+                SetProperty(ref goBackCommand, value);
             }
         }
 
         // *** INavigationTarget Methods ***
 
-        public void NavigateTo(object page)
+        public void NavigateTo(object page, INavigationBase navigationManager)
         {
             // If this is the first navigation then create the shell view and bind to this view model
 
@@ -95,6 +79,14 @@ namespace OkraShellSample.Pages
             // Set the shell view as the window content
 
             Window.Current.Content = shellPage;
+
+            // Update the navigation manager if changed
+
+            if (this.navigationManager != navigationManager)
+            {
+                this.navigationManager = navigationManager;
+                this.GoBackCommand = navigationManager.GetGoBackCommand();
+            }
         }
     }
 }
