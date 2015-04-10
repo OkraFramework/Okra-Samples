@@ -22,7 +22,7 @@ namespace OkraSettingsSample.Settings
     /// A page that displays the contents of a settings pane
     /// </summary>
     [PageExport("Settings_Wide")]
-    public sealed partial class WideSettings : UserControl
+    public sealed partial class WideSettings : SettingsFlyout
     {
         public WideSettings()
         {

@@ -16,13 +16,13 @@ using Windows.UI.Xaml.Navigation;
 
 // The Settings Flyout item template is documented at http://go.microsoft.com/fwlink/?LinkId=273769
 
-namespace OkraSettingsSample.Pages
+namespace OkraSettingsSample.Settings
 {
     /// <summary>
     /// A page that displays the contents of a settings pane
     /// </summary>
     [PageExport("Settings_Sample")]
-    public sealed partial class Settings : UserControl
+    public sealed partial class Settings : SettingsFlyout
     {
         public Settings()
         {

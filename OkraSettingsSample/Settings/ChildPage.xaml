@@ -1,20 +1,21 @@
-﻿<UserControl
-    x:Class="OkraSettingsSample.Pages.ChildPage"
+﻿<SettingsFlyout
+    x:Class="OkraSettingsSample.Settings.ChildPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:OkraSettingsSample.Pages"
+    xmlns:local="using:OkraSettingsSample.Settings"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:nav="using:Okra.Navigation"
     mc:Ignorable="d"
-    d:DesignWidth="266"
-    RequestedTheme="Light"
-    nav:SettingsPaneInfo.Title="Settings" nav:SettingsPaneInfo.IconSource="ms-appx:///Assets/SmallLogo.png"
-    nav:SettingsPaneInfo.HeaderBackground="{ThemeResource SettingsFlyoutHeaderBackgroundThemeBrush}" nav:SettingsPaneInfo.HeaderForeground="{ThemeResource SettingsFlyoutHeaderForegroundThemeBrush}">
+    IconSource="ms-appx:///Assets/SmallLogo.png"
+    Title="Settings"
+    d:DesignWidth="346">
 
     <!-- This StackPanel acts as a root panel for vertical layout of the content sections -->
-    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-                Background="{ThemeResource SettingsFlyoutBackgroundThemeBrush}">
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+        <!-- The StackPanel(s) below define individual content sections -->
+
+        <!-- Content Section 1-->
         <TextBlock TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}" Foreground="#C6000000" CharacterSpacing="20">
         		<Run Text="This is a child settings pane."/>
                 <LineBreak/><LineBreak/>
@@ -24,5 +25,8 @@
                 <LineBreak/><LineBreak/>
                 <Run Text="Note that clicking anywhere outside of this settings pane will close it."/>
         </TextBlock>
+
+        <!-- Define more Content Sections below as necessary -->
+
     </StackPanel>
-</UserControl>
+</SettingsFlyout>
